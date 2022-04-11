@@ -28,5 +28,7 @@ int main(int argc, const char * argv[]) {
     
     printf("Benjamin's age is %d, his heigth is %.2f, his favourite tuning is %d.\n", benjamin.age, benjamin.heigth, benjamin.ft.myIntT);
     
+    // Testing a change
+    
     return 0;
 }
