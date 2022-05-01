@@ -64,6 +64,8 @@ int main(int argc, const char * argv[]) {
     // Using macro values
     printf("Tonight we are playing in %d\n", kTuning);
     
+    // Range operators
+    void switchTempo(int mm);
     
     return 0;
 }
@@ -107,6 +109,28 @@ void printTempo(int mm) {
      */
     printf("This movement is %s", tempo);
 //    printf("This movement is an %s", (mm >= 120) ? "Allegro" : "Moderato");
+}
+
+void switchTempo(int mm) {
+    char * tempo;
+    switch (mm) {
+        case 144 ... 300: tempo = "a Presto\n";
+            break;
+        case 120 ... 143: tempo = "an Allegro\n";
+            break;
+        case 100 ... 119: tempo = "a Moderato\n";
+            break;
+        case 80 ... 99: tempo = "an Andante\n";
+            break;
+        case 60 ... 79: tempo = "an Adagio\n";
+            break;
+        case 40 ... 59: tempo = "a Largo\n";
+            break;
+            
+        default: tempo = "too slow to bother!\n";
+            break;
+    }
+    printf("This movement is %s", tempo);
 }
 
 
